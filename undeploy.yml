@@ -1,0 +1,10 @@
+---
+- name: Undeploy Webserver
+  hosts: Servers
+  become: true
+  become_user: root
+
+  tasks:
+    - name: "Stop Apache Server"
+      package: name=apache2 state=absent
+      
